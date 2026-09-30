@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.subtract-width {
+  width: calc(100% - 18rem);
+}
+
+@layer base {
+  html {
+    font-family: "Inter", sans-serif;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button:not(:disabled),
+  [data-slot="button"]:not([disabled]):not([aria-disabled="true"]):not([data-disabled="true"]),
+  [role="button"]:not([aria-disabled="true"]):not([data-disabled="true"]) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [data-slot="button"][disabled],
+  [data-slot="button"][aria-disabled="true"],
+  [data-slot="button"][data-disabled="true"],
+  [role="button"][aria-disabled="true"],
+  [role="button"][data-disabled="true"] {
+    cursor: not-allowed;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  button:not(:disabled),
+  [data-slot="button"]:not([disabled]):not([aria-disabled="true"]):not([data-disabled="true"]),
+  [role="button"]:not([aria-disabled="true"]):not([data-disabled="true"]) {
+    transition-property: transform, background-color, border-color, color, box-shadow, opacity !important;
+    transition-duration: 180ms !important;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+    will-change: transform;
+  }
+
+  button:not(:disabled):hover,
+  [data-slot="button"]:not([disabled]):not([aria-disabled="true"]):not([data-disabled="true"]):hover,
+  [role="button"]:not([aria-disabled="true"]):not([data-disabled="true"]):hover {
+    transform: translateY(-1px);
+  }
+
+  button:not(:disabled):active,
+  [data-slot="button"]:not([disabled]):not([aria-disabled="true"]):not([data-disabled="true"]):active,
+  [role="button"]:not([aria-disabled="true"]):not([data-disabled="true"]):active {
+    transform: translateY(0);
+  }
+}

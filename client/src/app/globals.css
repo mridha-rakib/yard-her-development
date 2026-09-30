@@ -1,0 +1,500 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.809 0.105 251.813);
+  --chart-2: oklch(0.623 0.214 259.815);
+  --chart-3: oklch(0.546 0.245 262.881);
+  --chart-4: oklch(0.488 0.243 264.376);
+  --chart-5: oklch(0.424 0.199 265.638);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.809 0.105 251.813);
+  --chart-2: oklch(0.623 0.214 259.815);
+  --chart-3: oklch(0.546 0.245 262.881);
+  --chart-4: oklch(0.488 0.243 264.376);
+  --chart-5: oklch(0.424 0.199 265.638);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+
+  button:not(:disabled),
+  [data-slot="button"]:not([disabled]):not([aria-disabled="true"]):not([data-disabled="true"]),
+  [role="button"]:not([aria-disabled="true"]):not([data-disabled="true"]) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [data-slot="button"][disabled],
+  [data-slot="button"][aria-disabled="true"],
+  [data-slot="button"][data-disabled="true"],
+  [role="button"][aria-disabled="true"],
+  [role="button"][data-disabled="true"] {
+    cursor: not-allowed;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  button:not(:disabled),
+  [data-slot="button"]:not([disabled]):not([aria-disabled="true"]):not([data-disabled="true"]),
+  [role="button"]:not([aria-disabled="true"]):not([data-disabled="true"]) {
+    transition-property: transform, background-color, border-color, color, box-shadow, opacity !important;
+    transition-duration: 180ms !important;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+    will-change: transform;
+  }
+
+  button:not(:disabled):hover,
+  [data-slot="button"]:not([disabled]):not([aria-disabled="true"]):not([data-disabled="true"]):hover,
+  [role="button"]:not([aria-disabled="true"]):not([data-disabled="true"]):hover {
+    transform: translateY(-1px);
+  }
+
+  button:not(:disabled):active,
+  [data-slot="button"]:not([disabled]):not([aria-disabled="true"]):not([data-disabled="true"]):active,
+  [role="button"]:not([aria-disabled="true"]):not([data-disabled="true"]):active {
+    transform: translateY(0);
+  }
+}
+
+.legal-document-content {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  color: #25342c;
+  font-size: 1rem;
+  line-height: 1.9;
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+
+.legal-document-content div,
+.legal-document-content section,
+.legal-document-content article,
+.legal-document-content main,
+.legal-document-content aside,
+.legal-document-content p {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+.legal-document-content > :first-child {
+  margin-top: 0;
+}
+
+.legal-document-content section + section {
+  margin-top: 1.5rem;
+}
+
+.legal-document-page[data-legal-layout="document"] .legal-document-content > section {
+  margin-top: 0;
+  padding: 1.6rem 0;
+  border-top: 1px solid #e7eee8;
+}
+
+.legal-document-page[data-legal-layout="document"] .legal-document-content > section:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.legal-document-content h1,
+.legal-document-content h2,
+.legal-document-content h3,
+.legal-document-content h4 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.55rem;
+  color: #10261b;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.legal-document-content h1 {
+  font-size: 1.85rem;
+}
+
+.legal-document-content h2 {
+  font-size: 1.45rem;
+}
+
+.legal-document-content h3 {
+  font-size: 1.08rem;
+}
+
+.legal-document-content h4 {
+  font-size: 0.92rem;
+}
+
+.legal-document-content p,
+.legal-document-content ul,
+.legal-document-content ol,
+.legal-document-content blockquote,
+.legal-document-content table,
+.legal-document-content pre {
+  margin: 0.55rem 0 0.85rem;
+}
+
+.legal-document-content ul,
+.legal-document-content ol {
+  padding-left: 1.2rem;
+}
+
+.legal-document-content ul {
+  list-style: disc;
+}
+
+.legal-document-content ol {
+  list-style: decimal;
+}
+
+.legal-document-content li + li {
+  margin-top: 0.4rem;
+}
+
+.legal-document-content a {
+  color: #116149;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-document-content strong {
+  color: #10261b;
+  font-weight: 700;
+}
+
+.legal-document-content blockquote {
+  background: #e8f5e9;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d7e7d8;
+  border-radius: 1rem;
+  color: #23553c;
+  font-size: 0.93rem;
+  line-height: 1.75;
+}
+
+.legal-document-content hr {
+  margin: 1.8rem 0;
+  border: 0;
+  height: 0;
+}
+
+.legal-document-content table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fcfefd;
+  border: 1px solid #e3ebe5;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.legal-document-content th,
+.legal-document-content td {
+  padding: 0.75rem 0.85rem;
+  text-align: left;
+}
+
+.legal-document-content th {
+  background: #f5f9f6;
+  color: #10261b;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] {
+  color: #31433b;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section {
+  margin-top: 1.2rem;
+  background: #ffffff;
+  border: 1px solid #e6efe8;
+  border-radius: 1.35rem;
+  padding: 1.35rem 1.4rem;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:first-child {
+  margin-top: 0;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] h2::before {
+  content: "";
+  width: 1.55rem;
+  height: 1.55rem;
+  flex: 0 0 1.55rem;
+  border-radius: 0.45rem;
+  background: linear-gradient(180deg, #e8f4ec 0%, #d7ede1 100%);
+  border: 1px solid #d5e8da;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] h3 {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+  font-size: 0.92rem;
+  color: #10261b;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] p,
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] ul {
+  margin: 0.4rem 0 0;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] ul {
+  padding-left: 1.15rem;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] li + li {
+  margin-top: 0.3rem;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(1) > div {
+  margin-top: 1rem;
+  background: #f5f8f6;
+  border: 1px solid #e3ebe5;
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(2) > div:last-child,
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(4) > div:last-child,
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(5) > div:last-child {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(2) > div:last-child {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(4) > div:last-child {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(5) > div:last-child {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(2) > div:last-child > div,
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(4) > div:last-child > div,
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(5) > div:last-child > div {
+  width: auto !important;
+  max-width: none !important;
+  border: 1px solid #e4eee7;
+  border-radius: 1rem;
+  background: #ffffff;
+  padding: 1rem;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(2) > div:last-child > div::before,
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(5) > div:last-child > div::before {
+  content: "";
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.75rem;
+  background: #eef7f1;
+  border: 1px solid #d9eadf;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(3) > div:last-child {
+  margin-top: 1rem;
+  background: #fff8e8;
+  border: 1px solid #f3deaa;
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(3) > div:last-child p + p {
+  margin-top: 0.8rem;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(6) {
+  background: #f5f7f5;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(7) {
+  background: #0f3a23;
+  border-color: #0f3a23;
+  color: #d9ebde;
+  text-align: center;
+  padding: 1.6rem 1.4rem;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(7) h2,
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(7) h3,
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(7) strong {
+  color: #ffffff;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(7) h2 {
+  justify-content: center;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(7) h2::before {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(7) p:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 1.2rem;
+}
+
+.legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(7) p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 13rem;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(2) > div:last-child,
+  .legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(4) > div:last-child,
+  .legal-document-page[data-legal-layout="privacy"] .legal-document-content[data-document-id="privacy-policy"] > section:nth-child(5) > div:last-child {
+    grid-template-columns: 1fr;
+  }
+}
