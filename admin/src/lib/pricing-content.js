@@ -1,0 +1,58 @@
+export const clonePricingCategories = () => [
+  {
+    id: "yard",
+    label: "Yard and Outdoor",
+    title: "Yard and Outdoor Jobs",
+    subtitle: "Automatic pricing based on either fixed rates, square footage, or mulch-yard depth.",
+    services: [
+      { id: "yard-storm-cleanup", title: "Storm Debris Cleanup", pricingRule: "$90 minimum or $0.06 per sq ft" },
+      { id: "yard-general-cleanup", title: "Yard Cleanup (General)", pricingRule: "$75 minimum or $0.05 per sq ft" },
+      { id: "yard-garden-bed-cleanup", title: "Garden Bed Cleanup", pricingRule: "$75 minimum or $0.05 per sq ft" },
+      { id: "yard-weed-removal", title: "Weed Removal", pricingRule: "$65 minimum or $0.07 per sq ft" },
+      { id: "yard-hedge-trimming", title: "Hedge Trimming", pricingRule: "$60 minimum or $0.04 per sq ft" },
+      { id: "yard-bush-trimming", title: "Bush and Shrub Trimming", pricingRule: "$55 fixed price" },
+      { id: "yard-mulching", title: "Mulching", pricingRule: "5-yard minimum, $120 per yard at 3-inch default depth" },
+      { id: "yard-snow-shoveling", title: "Snow Shoveling", pricingRule: "$50 minimum or $0.05 per sq ft" },
+      { id: "yard-lawn-mowing", title: "Lawn Mowing", pricingRule: "$40 minimum or $0.032 per sq ft" },
+      { id: "yard-leaf-cleanup", title: "Leaf Blowing and Cleanup", pricingRule: "$45 minimum or $0.04 per sq ft" },
+    ],
+  },
+  {
+    id: "pet",
+    label: "Pet and Property",
+    title: "Pet and Property Cleanup",
+    subtitle: "Transparent cleanup rules for small and large jobs.",
+    services: [
+      { id: "pet-waste-removal", title: "Dog Poop / Pet Waste Removal", pricingRule: "$50 minimum or $0.06 per sq ft" },
+      { id: "pet-yard-sanitizing", title: "Yard Sanitizing", pricingRule: "$40 fixed price" },
+      { id: "pet-litter-cleanup", title: "Litter Cleanup", pricingRule: "$40 fixed price" },
+    ],
+  },
+  {
+    id: "vehicle",
+    label: "Vehicle Services",
+    title: "Vehicle Convenience Services",
+    subtitle: "Flat-rate services at the customer's location.",
+    services: [
+      { id: "test-live-payment", title: "Live Payment Test Job", pricingRule: "$2 fixed price" },
+      { id: "vehicle-gas-filling", title: "Gas Filling", pricingRule: "$25 fixed price" },
+      { id: "vehicle-washer-fluid", title: "Windshield Washer Fluid Refill", pricingRule: "$15 fixed price" },
+      { id: "vehicle-tire-air", title: "Tire Air Fill", pricingRule: "$10 fixed price" },
+      { id: "vehicle-exterior-wash", title: "Car Exterior Wash", pricingRule: "$50 fixed price" },
+      { id: "vehicle-interior-vacuuming", title: "Interior Vacuuming", pricingRule: "$40 fixed price" },
+    ],
+  },
+  {
+    id: "home",
+    label: "Home Exterior",
+    title: "Home Exterior Tasks",
+    subtitle: "Home services with either flat or measured pricing.",
+    services: [
+      { id: "home-trash-bin-cleaning", title: "Trash Bin Cleaning", pricingRule: "$25 fixed price" },
+      { id: "home-pressure-washing", title: "Pressure Washing", pricingRule: "$120 fixed price" },
+      { id: "home-gutter-removal", title: "Gutter Debris Removal", pricingRule: "$120 fixed price" },
+      { id: "home-window-washing", title: "Window Washing", pricingRule: "$65 fixed price" },
+      { id: "home-patio-sweeping", title: "Patio and Deck Sweeping", pricingRule: "$60 minimum or $0.05 per sq ft" },
+    ],
+  },
+];
