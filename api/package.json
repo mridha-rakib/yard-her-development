@@ -4,8 +4,8 @@
   "description": "Layered Express backend for Yard platform",
   "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js",
+    "dev": "node init && nodemon src/server.js",
+    "start": "node init && node src/server.js",
     "check": "node --check src/server.js"
   },
   "keywords": [
